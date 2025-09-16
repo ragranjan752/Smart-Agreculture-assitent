@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BKU - Bihar Kisan Union</title>
+ <link rel="stylesheet" href="html.css">
+    <script src="html.js" defer></script>
+</head>
+
+<body >
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="bihar krishi.png" alt="BKU Logo">
+          BKU
+        </div>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#ai-advisor">Advisor</a></li>
+          <li><a href="#calculators">Calculators</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <img src="Screenshot 2025-09-15 233024.png" alt="Website Screenshot" style="max-width:100%; border-radius:20px; margin-bottom:2rem;">
+        <h1>Bihar Kisan Union</h1>
+        <p>Empowering farmers for a prosperous future.</p>
+        <a href="#features" class="cta-button">Learn More</a>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+        <h2>Our Mission</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-icon">🌾</span>
+            <h3>Advocacy & Support</h3>
+            <p>We work to ensure fair policies and prices for farmers' produce.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">🤝</span>
+            <h3>Community Building</h3>
+            <p>Uniting farmers to create a strong, collective voice for change.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">💡</span>
+            <h3>Technology Integration</h3>
+            <p>Providing modern tools and knowledge to enhance agricultural practices.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai-advisor" class="ai-advisor">
+      <div class="container">
+        <h2>AI Chatbot & Crop Advisor</h2>
+        <div class="advisor-tabs">
+          <button class="advisor-tab-button active" data-tab="chatbot-tab">Chatbot Queries</button>
+          <button class="advisor-tab-button" data-tab="pest-tab">Pest & Disease Detection</button>
+          <button class="advisor-tab-button" data-tab="fertilizer-tab">Fertilizer Recommendation</button>
+          <button class="advisor-tab-button" data-tab="voice-tab">Voice Based Advice</button>
+        </div>
+        <div id="chatbot-tab" class="advisor-content active">
+          <h3>Ask Anything</h3>
+          <textarea id="chatbot-input" rows="4" placeholder="Type your query here..."></textarea>
+          <button class="calc-button" onclick="sendChatbotQuery()">Submit</button>
+          <div class="result" id="chatbot-response"></div>
+        </div>
+        <div id="pest-tab" class="advisor-content">
+          <h3>Pest & Disease Detection</h3>
+          <p>Upload an image of the affected plant to get a diagnosis.</p>
+          <input type="file" accept="image/*" class="upload-input" id="disease-image">
+          <button class="calc-button" onclick="detectDisease()">Detect</button>
+          <div class="result" id="disease-result"></div>
+        </div>
+        <div id="fertilizer-tab" class="advisor-content">
+          <h3>Fertilizer Recommendation</h3>
+          <label for="crop-name">Crop Name:</label>
+          <input type="text" id="crop-name" placeholder="e.g., Rice, Wheat">
+          <label for="soil-details">Soil Type / pH / whatever data you have:</label>
+          <input type="text" id="soil-details" placeholder="e.g., Loamy, pH 6.5">
+          <button class="calc-button" onclick="recommendFertilizer()">Get Recommendation</button>
+          <div class="result" id="fertilizer-result"></div>
+        </div>
+        <div id="voice-tab" class="advisor-content">
+          <h3>Voice Based Crop Advice</h3>
+          <p>Speak your query, we’ll respond with voice + text.</p>
+          <button class="calc-button voice-button" onclick="startVoiceQuery()">🎙 Speak Now</button>
+          <div class="result" id="voice-response"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculators" class="calculator">
+      <div class="container">
+        <h2>Farm Calculators</h2>
+        <p>Quick and easy tools to help you with your daily farm calculations.</p>
+        <div class="calc-grid">
+          <div class="calc-item">
+            <h3>Yield Calculator</h3>
+            <label for="area">Farm Area (in acres):</label>
+            <input type="number" id="area" placeholder="Enter farm area">
+            <label for="yield-per-acre">Expected Yield (kg/acre):</label>
+            <input type="number" id="yield-per-acre" placeholder="Enter yield per acre">
+            <button class="calc-button" onclick="calculateYield()">Calculate Total Yield</button>
+            <div class="result" id="yield-result"></div>
+          </div>
+          <div class="calc-item">
+            <h3>Revenue Calculator</h3>
+            <label for="total-yield">Total Yield (in kg):</label>
+            <input type="number" id="total-yield" placeholder="Enter total yield">
+            <label for="market-price">Market Price (Rs/kg):</label>
+            <input type="number" id="market-price" placeholder="Enter market price">
+            <button class="calc-button" onclick="calculateRevenue()">Calculate Total Revenue</button>
+            <div>
