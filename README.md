@@ -1,2 +1,2 @@
-# Smart-Agreculture-assitent
+# Smart-Agriculture-assitant
 hackathon team (hacksprout)
